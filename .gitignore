@@ -3,6 +3,7 @@ node_modules/
 dist/
 dist-ssr/
 *.log
+*.err
 logs/
 .DS_Store
 .vscode/
