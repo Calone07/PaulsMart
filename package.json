@@ -1,9 +1,8 @@
 {
   "private": true,
   "type": "module",
-  "workspaces": ["client", "server"],
   "scripts": {
-    "build": "npm run build --workspace=client",
-    "dev": "npm run dev --workspace=server"
+    "build": "cd client && npm run build",
+    "dev": "cd server && npm run dev"
   }
 }
