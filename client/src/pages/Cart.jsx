@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Container from '../components/ui/Container';
 import Button from '../components/ui/Button';
 import ProductImage from '../components/ui/ProductImage';
@@ -6,6 +6,7 @@ import { useCart } from '../context/CartContext';
 
 export default function Cart() {
   const { items, removeItem, updateQuantity, totalPrice, clearCart } = useCart();
+  const navigate = useNavigate();
 
   if (items.length === 0) {
     return (
@@ -97,7 +98,7 @@ export default function Cart() {
             <span className="text-2xl font-bold text-dark">${totalPrice.toLocaleString()}</span>
           </div>
           <p className="text-xs text-gray-400 mb-6">Shipping calculated at checkout</p>
-          <Button className="w-full" size="lg">
+          <Button className="w-full" size="lg" onClick={() => navigate('/checkout')}>
             Proceed to Checkout
           </Button>
         </div>
